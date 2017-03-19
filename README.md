@@ -17,7 +17,7 @@ APPSTORE_EXPORT_OPTIONS：提交AppStore相关配置；
 
 USER_KEY（line20），API_KEY（line21）：蒲公英账号唯一的，可去个人账号中查询；
 
-APPSTORE_USER_KEY(line24),APPSTORE_USER_PASSWORD(linear5):appstore账号和密码；
+APPSTORE_USER_KEY(line24),APPSTORE_USER_PASSWORD(line25):appstore账号和密码；
   
 
 ###命令，以workspace为例：
