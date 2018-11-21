@@ -10,6 +10,7 @@ SCHEME = "HelloWorld"
 CODE_SIGN_IDENTITY = "iPhone Distribution: XXX Co., Ltd. (XXXXXXXXX)"
 ADHOC_PROVISIONING_PROFILE = "0a87xxx1-xxxx-xxxx-xxxx-xxxxa79229cd"
 APPSTORE_PROVISIONING_PROFILE = "9d42xxx5-xxxx-xxxx-xxxx-xxxx47506a5f"
+CODE_SIGNING_ALLOWED = "NO"
 CONFIGURATION = "Release"
 SDK = "iphoneos"
 ADHOC_EXPORT_OPTIONS = "./AdHocExportOptions.plist"
@@ -75,7 +76,7 @@ def buildProject(project, adhoc, appstore, output, ipa, provisionprofile, export
 		ipaoutput = output + "/appstore"
 
 	archive = ipaoutput + "/" + SCHEME + ".xcarchive"
-	buildCmd = 'xcodebuild archive -project %s -scheme %s -configuration %s -archivePath %s CODE_SIGN_IDENTITY="%s" PROVISIONING_PROFILE="%s"' %(project, SCHEME, CONFIGURATION, archive, CODE_SIGN_IDENTITY, provisionprofile)
+	buildCmd = 'xcodebuild archive -project %s -scheme %s -configuration %s -archivePath %s CODE_SIGN_IDENTITY="%s" PROVISIONING_PROFILE="%s" CODE_SIGNING_ALLOWED="%s"' %(project, SCHEME, CONFIGURATION, archive, CODE_SIGN_IDENTITY, provisionprofile, CODE_SIGNING_ALLOWED)
 	process = subprocess.Popen(buildCmd, shell=True)
 	process.wait()
 
